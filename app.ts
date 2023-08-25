@@ -1,9 +1,29 @@
-function add(n1: number, n2: number): number {
-    return n1 + n2;
+//  ----- enum -----  //
+enum Role {
+  ADMIN = "ADMINISTRATOR",
+  READ_ONLY = "READ ONLY USER",
+  AUTHOR = "AUTHOR",
 }
 
-const number1 = 5;
-const number2 = 2.8;
+//  ----- objects -----  //
+const person: {
+  name: string;
+  age: number;
+  hobbies: string[]; //array
+  role: [number, Role /*enum*/]; //tuple
+} = {
+  name: "Camilo",
+  age: 38,
+  hobbies: ["sports", "Cooking"], //array
+  role: [2, Role.AUTHOR], //tuple
+};
 
-const result = add(number1, number2);
-console.log(result);
+//  ----- arrays -----  //
+let favoriteActivities: string[];
+favoriteActivities = ["sports"];
+
+console.log(person.name);
+
+for (const hobie of person.hobbies) {
+  console.log(hobie.toUpperCase());
+}
